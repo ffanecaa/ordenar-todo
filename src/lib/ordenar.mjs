@@ -11,7 +11,7 @@
  * @type {comparator<Number>}
  */
 function numeroAmenorQueNumeroB(a,b){
-    //TODO
+return a<b
 }
 
 /**
@@ -23,7 +23,11 @@ function numeroAmenorQueNumeroB(a,b){
  * @returns {Number} - Indice do elemento a mover
  */
 function seguinteElementoAmover(lista, comparador) {
-    //TODO
+  let index = 0
+  for (let i = 1; i< lista.length; i++){
+    if(comparador(lista[i],lista[index]))
+    index = i
+  } return index
 }
 
 /**
@@ -36,7 +40,16 @@ function seguinteElementoAmover(lista, comparador) {
  * @returns {T[]} - Array con elementos ordenados
  */
 function ordenarElementos(lista, selectorElementoAmover, comparador){
-    //TODO
+    let ordenar = []
+while ( lista.length>0){
+
+   
+    selectorElementoAmover  = seguinteElementoAmover(lista,comparador)
+     ordenar.push(lista[selectorElementoAmover])
+     lista.splice(selectorElementoAmover,1)
+
+} 
+ return ordenar
 }
 
 export {
